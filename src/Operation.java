@@ -42,7 +42,7 @@ public class Operation extends Thread{
         try{
             FileChannel writer = new RandomAccessFile("C://" + Basic.PBU[pbuIndex] + ".txt","rw").getChannel();  
             ByteBuffer cc;
-            Charset utf8 = Charset.forName("gbk"); 
+            Charset utf8 = Charset.forName("utf-8"); 
             
             for(int i=0;i<100;i++)
             {
@@ -65,7 +65,7 @@ public class Operation extends Thread{
                             oc = selectrandomNum(2);
                         }
                         int r = selectrandomNum(Basic.SECURITY.length);
-                        res = genOneAddRecord(pbuIndex,r,oc)+"\n";
+                        res = genOneAddRecord(pbuIndex,r,oc)+"\r\n";
                         //System.out.println(res);
                         cc = utf8.encode(res);
                         writer.write(cc);
@@ -80,7 +80,7 @@ public class Operation extends Thread{
                     {
                         int r = selectrandomNum(highRange-lowRange);
                         int delSeqNum = lowRange + r;
-                        res = genOneDelRecord(delSeqNum) + "\n";
+                        res = genOneDelRecord(delSeqNum) + "\r\n";
                         cc = utf8.encode(res);
                         writer.write(cc);
 

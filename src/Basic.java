@@ -22,8 +22,8 @@
 public class Basic {
     
     static char SOH = '\u0001';
-    //static int MAXN = 10000000;
-    static int MAXN =   10000;
+    static int MAXN = 10000000;
+    //static int MAXN =   10000;
     static Integer SEQNUM = 0000000173;
     static char SEP = '\t';
     static int GROUP = 5;

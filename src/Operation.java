@@ -42,7 +42,7 @@ public class Operation extends Thread{
         try{
             FileChannel writer = new RandomAccessFile("C://" + Basic.PBU[pbuIndex] + ".txt","rw").getChannel();  
             ByteBuffer cc;
-            Charset utf8 = Charset.forName("utf-8"); 
+            Charset utf8 = Charset.forName("gbk"); 
             
             for(int i=0;i<100;i++)
             {
